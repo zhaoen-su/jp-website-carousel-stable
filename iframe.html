@@ -29,19 +29,21 @@
     // 自動調整 iframe 高度的腳本（選用）
     // 為了確保 iframe 不會出現內部捲軸，我們可以固定一個高度比例
     function adjustIframeHeight() {
-        const iframe = document.getElementById('carousel-iframe');
-        if (iframe) {
-        const width = iframe.offsetWidth;
-        
-        if (width <= 768) {
-            // 手機版比例較高
-            iframe.style.height = (width * 1.05) + "px"; 
-        }else {
-            // 桌面版較低比例
-        iframe.style.height = (width * 0.6) + "px"; 
-        }
+            const iframe = document.getElementById('carousel-iframe');
+            if (iframe) {
+            const width = iframe.offsetWidth;
+            
+            if (width <= 768) {
+                iframe.style.height = (width * 1.05) + "px"; 
+            }else if (768 <= width && width <= 1024) {
+                iframe.style.height = (width * 0.8) + "px"; 
+            }else if (width > 1024) {
+                iframe.style.height = (width * 0.6) + "px"; 
+            }else {
+                iframe.style.height = "600px";
+            }
+        }   
     }
-
     window.addEventListener('resize', adjustIframeHeight);
     window.addEventListener('load', adjustIframeHeight);
     </script>
