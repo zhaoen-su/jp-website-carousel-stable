@@ -31,10 +31,14 @@
     function adjustIframeHeight() {
         const iframe = document.getElementById('carousel-iframe');
         if (iframe) {
-        // 假設你的輪播圖比例是 16:9 加上下方文字空間
-        // 你可以根據實際內容調整這個數值 (例如 1.2 是寬度的 1.2 倍高)
         const width = iframe.offsetWidth;
-        iframe.style.height = (width * 1.05) + "px"; 
+        
+        if (width <= 768) {
+            // 手機版比例較高
+            iframe.style.height = (width * 1.05) + "px"; 
+        }else {
+            // 桌面版較低比例
+        iframe.style.height = (width * 0.8) + "px"; 
         }
     }
 
