@@ -34,11 +34,15 @@
             const width = iframe.offsetWidth;
             
             if (width <= 768) {
-                iframe.style.height = (width * 1.05) + "px"; 
+                iframe.style.height = (width * 0.9) + "px"; 
             }else if (768 <= width && width <= 1024) {
-                iframe.style.height = (width * 0.8) + "px"; 
-            }else if (width > 1024) {
-                iframe.style.height = (width * 0.6) + "px"; 
+                iframe.style.height = (width * 0.75) + "px";
+            }else if (1024 <= width && width <= 1200) {
+                iframe.style.height = (width * 0.63) + "px";
+            }else if (1200 <= width && width <= 1400) {
+                iframe.style.height = (width * 0.8) + "px";
+            }else if (width > 1400) {
+                iframe.style.height = (width * 0.58) + "px"; 
             }else {
                 iframe.style.height = "600px";
             }
