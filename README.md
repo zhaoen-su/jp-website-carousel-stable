@@ -1,1 +1,1 @@
-# jp-website-carousel
+# jp-website-carousel-stable
